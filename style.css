@@ -1,7 +1,21 @@
 @charset "utf-8";
 /* CSS Document */
+.col-10{
+	width:10%;
+	display:inline-block;
+}
 .bar .title, .bar  {
 	height: 180px;
+}
+.pull-right{
+	float:right;
+}
+.full-width{
+	width:100%;
+	padding:0%;
+}
+.font-24{
+	    font-size: 24px;
 }
 .tabbed-slidebox .tsb-icons {
 	     margin: 123px 0;
