@@ -1,17 +1,30 @@
 @charset "utf-8";
 /* CSS Document */
 .bar .title, .bar  {
-	height: 363px;
+	height: 200px;
 }
 .tabbed-slidebox .tsb-icons {
-	    margin: 327px 0;
+	     margin: 158px 0;
+		 background:#000;
 }
 .tsb-icons{
 	margin-bottom: 11px !important;
+}
+.bar.bar-positive {
+    border:none;
+}
+.pane, .view, .tabbed-slidebox .tsb-icons { 
+	background-color: #fff;
 }
 .tabbed-slidebox .tsb-icons a {
 	width: 101px !important;
     font-size: 19px !important;
     text-align: center !important;
     padding: 8px !important;
+}
+.tabbed-slidebox .slider-slide {
+	background-color: #000;
+}
+.tabbed-slidebox .tsb-icons:after {
+    border-color: transparent transparent #000000 transparent;
 }
