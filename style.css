@@ -4,8 +4,9 @@
 	height: 180px;
 }
 .tabbed-slidebox .tsb-icons {
-	     margin: 138px 0;
+	     margin: 123px 0;
 		 background:#000;
+		 margin-bottom: 0px !important;
 }
 .tsb-icons{
 	margin-bottom: 11px !important;
@@ -26,11 +27,23 @@
     color: #0E0000 !important;
     margin: 9px;
     text-decoration: none;
-    border-bottom: 1px solid black;
+	margin-bottom: 0;
+}
+.bar.bar-positive {
+    border-color: #236f18;
+    background-color: #1a5d10;
+    background-image: linear-gradient(0deg, #1a5d10, #1a5d10 50%, transparent 50%);
+    color: #fff;
 }
 .tabbed-slidebox .slider-slide {
-	background-color: #000;
+	background-color: #f2f2f2;
 }
 .tabbed-slidebox .tsb-icons:after {
     border-color: transparent transparent #000000 transparent;
+	border-width: 0;
+}
+.tabbed-slidebox .tsb-icons a.active {
+	margin-bottom: 0;
+    padding-top: 10px !important;
+	border-bottom: 4px solid black;
 }
