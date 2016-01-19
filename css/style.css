@@ -10,6 +10,9 @@
 .pull-right{
 	float:right;
 }
+.pull-left{
+	float:left;
+}
 .full-width{
 	width:100%;
 	padding:0%;
@@ -60,4 +63,36 @@
 	margin-bottom: 0;
     padding-top: 10px !important;
 	border-bottom: 4px solid black;
+}
+.live-scoring{
+	width: 100%;
+    min-height: 176px;
+}
+.vs{
+	width: 10%;
+    float: left;
+    margin-top: 60px;
+    text-align: center;
+    font-size: 114%;
+    border: 1px solid #F4D42D;
+    padding: 2%;
+    color: #121210;
+    background: #F3EB21;
+}
+.inning-bar{
+	width: 35%;
+    float: left;
+    margin-top: 25px;
+    text-align: center;
+}
+.inning-bar img{
+	    width: 73px;
+}
+.inning-bar h5{
+	margin: 0;
+    color: #fff;
+    padding: 0;
+}
+.inning-bar p{
+	    font-size: 11px;
 }

@@ -7,15 +7,15 @@
     <title>Tabbed Slide box</title>
 
     <!-- ionic css -->
-    <link href="ionic.css" rel="stylesheet">
+    <link href="css/ionic.css" rel="stylesheet">
 
     <!-- your app's css -->
-    <link href="tabSlideBox.css" rel="stylesheet">
-	<link href="style.css" rel="stylesheet">
+    <link href="css/tabSlideBox.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
     <!-- ionic/angularjs scripts -->
-    <script src="ionic.bundle.min.js"></script>
+    <script src="js/ionic.bundle.min.js"></script>
 	
-	<script src="tabSlideBox.js"></script>
+	<script src="js/tabSlideBox.js"></script>
 	
 	<!-- your app's script -->
     <script>
@@ -72,9 +72,26 @@
 
     	<ion-header-bar align-title="center" class="bar-positive">
         	<div class="full-width">
-				<img src="logo.png" width="50" height="39" style="margin: 4px;">
+                <div class="pull-left">
+                    <img src="images/logo.png" width="50" height="39" style="margin: 4px;">
+                 </div>
                 <div class="pull-right">
-                    <i class="ion-navicon-round font-24"></i>
+                    <button class="button button-icon icon ion-navicon"></button>
+                </div>
+                <div class="live-scoring">
+                	<div class="inning-bar">
+                    	<img src="images/karachi.png">
+                         <h5>KARACHI KINGS</h5>
+                         <h5>100/2</h5>
+                         <p>Run Rate: 50.4</p>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="inning-bar">
+                   		<img src="images/zalmi.png">
+                        <h5>PESHWAR ZALMI</h5>
+                        <h5>50.4 OVERS</h5>
+                        <p>Extras: 50</p>
+                    </div>
                 </div>
            </div>
 		</ion-header-bar>
@@ -96,19 +113,19 @@
 			    	</div>
 			        <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
 			            <ion-slide>
-			                <img  width="96%" src="body.png">
+			                <img  width="96%" src="images/body.png">
 			            </ion-slide>
 			            <ion-slide>
-			               <img  width="96%" src="body.png">
+			               <img  width="96%" src="images/body.png">
 			            </ion-slide>
 			            <ion-slide>
-			                <img  width="96%" src="body.png">
+			                <img  width="96%" src="images/body.png">
 			            </ion-slide>
 						<ion-slide>
-			               <img  width="96%" src="body.png">
+			               <img  width="96%" src="images/body.png">
 			            </ion-slide>
 						<ion-slide>
-			               <img  width="96%" src="body.png">
+			               <img  width="96%" src="images/body.png">
 			            </ion-slide>
 			            
 			        </ion-slide-box>
