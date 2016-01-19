@@ -61,9 +61,10 @@
 }
 .tabbed-slidebox .tsb-icons a.active {
 	margin-bottom: 0;
-    padding-top: 10px !important;
+    padding: 11px 0 !important;
 	border-bottom: 4px solid black;
 }
+
 .live-scoring{
 	width: 100%;
     min-height: 176px;
@@ -96,8 +97,10 @@
 	    font-size: 11px;
 }
 .live_fixter{
-	width:auto !important;
-	margin-top: 25px;
+	width: 100% !important;
+    margin-top: 1px;
+	position: relative;
+    top: -3px;
 }
 .match_vs{
 	font-size: 18px;
