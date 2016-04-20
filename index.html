@@ -1,186 +1,45 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>Tabbed Slide box</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script src="jquery.min.js"></script>
+</head>
 
-    <!-- ionic css -->
-    <link href="css/ionic.css" rel="stylesheet">
-
-    <!-- your app's css -->
-    <link href="css/tabSlideBox.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-    <!-- ionic/angularjs scripts -->
-    <script src="js/ionic.bundle.min.js"></script>
-	
-	<script src="js/tabSlideBox.js"></script>
-	
-	<!-- your app's script -->
+<body style="margin:0; padding:0;">
+	<video controls="controls" autoplay="autoplay"   style="-webkit-transform:rotate(90deg) translate(266px,420px);" id="player1"  preload="none" onclick="playVideo();">
+     <source type="video/mp4" src="video.mp4">
+    </video>
+    <img onclick="bdass()" id="bda" src="epf.png" style="position: absolute; display:none;-webkit-animation: neon3 1.5s ease-in-out infinite alternate;
+    width: 240px;
+    left: 65px;
+    top: 1541px;" />
     <script>
-	    var app = angular.module('slidebox', ['ionic', 'tabSlideBox'])
-		.run(['$q', '$http', '$rootScope', '$location', '$window', '$timeout', 
-					function($q, $http, $rootScope, $location, $window, $timeout){
-	    
-	        $rootScope.$on("$locationChangeStart", function(event, next, current){
-	            $rootScope.error = null;
-	            console.log("Route change!!!", $location.path());
-	            var path = $location.path();
-	            
-	            
-	            console.log("App Loaded!!!");
-	        });
-	    }
-	    ]);
+	var endtime = 0; 
+		function playVideo() {
+			 endtime = 64;
+			video.play();
+		}
+		function bdass(){
+			endtime = 87;
+			video.play();
+			$('#bda').fadeOut('slow');
+		}
+		var video = document.getElementById('player1');
 		
-		app.config(function($stateProvider, $urlRouterProvider) {
-			$stateProvider.state('index', {
-				url : '/',
-				templateUrl : 'index.html',
-				controller : 'IndexCtrl'
-			});
+			//handler should be bound first
+			video.addEventListener("timeupdate", function() {
+			   if (this.currentTime >= endtime) {
+				   if(endtime == 64){
+				   		$('#bda').fadeIn('slow');
+				   }
+				   if(endtime == 87){
+					   location.reload();
+				   }
+					this.pause();
+				}
+			}, false);
 		
-			$urlRouterProvider.otherwise("/");
-		});
-		
-        app.controller("IndexCtrl", ['$rootScope', "$scope", "$stateParams", "$q", "$location", "$window", '$timeout', 
-			function($rootScope, $scope, $stateParams, $q, $location, $window, $timeout){
-			$scope.onSlideMove = function(data){
-				
-			};	
-        }
-        ]);
-    </script>
-    
-	<style>
-		.slider-slide h3{
-			color:#fff;
-			margin-top:10px;
-		};
-		
-		.scroll{
-			height:100%;
-		};
-		
-		
-	</style>
-	
-  </head>
-
-  <body ng-app="slidebox" animation="slide-left-right-ios7">
-
-    	<ion-header-bar align-title="center" class="bar-positive">
-        	<div class="full-width">
-                <button class="button button-icon icon ion-navicon pull-left"></button> 
-                 <div class="text-center height-less">
-                    	<img src="images/logo.png" width="50" height="39" style="margin: 4px; margin-left:-28px;">
-                  </div>
-                <div class="pull-right">
-                   
-                </div>
-                <!--<div class="live-scoring">
-                	<div class="inning-bar">
-                    	<img src="images/karachi.png">
-                         <h5>KARACHI KINGS</h5>
-                         <h5>100/2</h5>
-                         <p>Run Rate: 50.4</p>
-                    </div>
-                    <div class="vs">VS</div>
-                    <div class="inning-bar">
-                   		<img src="images/zalmi.png">
-                        <h5>PESHWAR ZALMI</h5>
-                        <h5>50.4 OVERS</h5>
-                        <p>Extras: 50</p>
-                    </div>
-                </div>-->
-                <div class="row live_fixter">
-                       <div class="col text-center"> 
-                         <div class="col-30 col-center"><img width="60" class="thumb_r" src="images/karachi.png"></div>
-                         <div class="text-center match_info">
-                             <span><strong>Runs:</strong> 299/5</span><br/>
-                             <span><strong>Over:</strong> 29.5</span><br/>
-                         </div>
-                         </div>   
-                        <span class="text-center col-center"><span class="match_vs">VS </span></span>
-                        <div class="col text-center"> 
-                         <div class="col-30 col-center"><img width="60" class="thumb_r" src="images/karachi.png"></div>
-                         <div class="text-center match_info">
-                             <span><strong>Runs:</strong> 299/5</span><br/>
-                             <span><strong>Over:</strong> 29.5</span><br/>
-                         </div>
-                         </div>
-                   </div>
-           </div>
-		</ion-header-bar>
-
-    <ion-nav-view ng-controller="IndexCtrl"></ion-nav-view>
-	
-	<script id="index.html" type="text/ng-template">
-      <ion-view title="PSL">		
-        <ion-content scroll="false">
-          	<tab-slide-box tab="2" >
-			    	<div class="tsb-icons">
-			    		<div class="tsb-ic-wrp">
-							<a href="javascript:;">Fantasy</a>
-							<a href="javascript:;">Score</a>
-							<a href="javascript:;">Home</a>
-							<a href="javascript:;">Shop</a>
-							<a href="javascript:;">Blog</a>
-						</div>
-			    	</div>
-			        <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
-			            <ion-slide>
-			                <img  width="96%" src="images/body.png">
-			            </ion-slide>
-			            <ion-slide>
-			               <img  width="96%" src="images/body.png">
-			            </ion-slide>
-			            <ion-slide>
-			                <ion-list>
-							  <ion-item class="item team_list item-avatar item-icon-right teamLi" href="#/app/players/123" >
-								<img ng-src="images/icons/fixtures.png"> 
-								<h2 class="team_list">FIXTURES</h2>
-								<i class="icon ion-ios-arrow-right"></i>
-							   </ion-item>
-							   <ion-item class="item item-avatar item-icon-right teamLi" href="#/app/players/123" >
-								<img ng-src="images/icons/fl.png"> 
-								<h2 class="team_list">FANTASY LEAGUE</h2>
-								<i class="icon ion-ios-arrow-right"></i>
-							   </ion-item>
-								<ion-item class="item item-avatar item-icon-right teamLi" href="#/app/players/123" >
-								<img ng-src="images/icons/fixtures.png"> 
-								<h2 class="team_list">LIVE SCORE</h2>
-								<i class="icon ion-ios-arrow-right"></i>
-							   </ion-item>
-								<ion-item class="item item-avatar item-icon-right teamLi" href="#/app/players/123" >
-								<img ng-src="images/icons/players.png"> 
-								<h2 class="team_list">TEAMS</h2>
-								<i class="icon ion-ios-arrow-right"></i>
-							   </ion-item>
-								<ion-item class="item item-avatar item-icon-right teamLi" href="#/app/players/123" >
-								<img ng-src="images/icons/fixtures.png"> 
-								<h2 class="team_list">LEADERBOARD</h2>
-							   <i class="icon ion-ios-arrow-right"></i>
-							   </ion-item>
-							   <ion-item class="item item-avatar item-icon-right teamLi" href="#/app/players/123" >
-								<img ng-src="images/icons/news.png"> 
-								<h2 class="team_list">NEWS</h2>
-							   <i class="icon ion-ios-arrow-right"></i>
-							   </ion-item>
-							</ion-list>
-			            </ion-slide>
-						<ion-slide>
-			               <img  width="96%" src="images/body.png">
-			            </ion-slide>
-						<ion-slide>
-			               <img  width="96%" src="images/body.png">
-			            </ion-slide>
-			            
-			        </ion-slide-box>
-          	</tab-slide-box>
-        </ion-content>
-      </ion-view>
-    </script>
-  </body>
+	</script>
+</body>
 </html>
