@@ -7,9 +7,6 @@
         version     = "1.0.8" >
 
     <!-- versionCode is optional and Android only -->
-    
-	<plugin name="com.jaeger.html5video" spec="1.2.1" source="pgb" />
-	
     <name> Pizza Pakistan</name>
 	
 	<access origin="*" />    
