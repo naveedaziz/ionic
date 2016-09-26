@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/3.5"
+        id        = "com.phonegap.taskapp"
+        version   = "1.0.0">
+
+    <name>Task App</name>
+
+    <description>
+       Task app for employees
+    </description>
+
+    <author href="http://fixelcloud.com" email="nidobda_92@hotmail.com">
+       Naveed Aziz
+    </author>
+
+    <preference name="permissions"                value="none"/>
+    <gap:plugin name="com.phonegap.plugins.facebookconnect" version="<VERSION>">
+        <param name="APP_ID" value="<YOUR_APP_ID>" />
+        <param name="APP_NAME" value="<YOUR_APP_NAME>" />
+    </gap:plugin>
+ 
+
+ 
+    <access origin="*"/>
+    <!--
+        <access origin="http://phonegap.com" />                    - allow any secure requests to http://phonegap.com/
+        <access origin="http://phonegap.com" subdomains="true" />  - same as above, but including subdomains, such as http://build.phonegap.com/
+        <access origin="http://phonegap.com" browserOnly="true" /> - only allows http://phonegap.com to be opened by the child browser.
+    -->
+
+</widget>
