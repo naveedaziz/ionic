@@ -65,8 +65,8 @@
     <plugin name="cordova-plugin-vibration" />
 	
 	<plugin name="com.phonegap.plugins.facebookconnect" spec="0.4.0"> source="pgb">
-		<param name="APP_ID" value="..." />
-		<param name="APP_NAME" value="..." />
+		<param name="APP_ID" value="175980006174210" />
+		<param name="APP_NAME" value="SOT" />
 	</gap:plugin>
 
     <!-- Third party plugins -->
