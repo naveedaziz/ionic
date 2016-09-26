@@ -33,10 +33,10 @@
 			
 			//Callback Login
 			function _onLogin( event ){     
-				alert('status > '+event.status); // 1 - success, 0 - error
-				alert('data > '+event.data); //Object response (id, name, email, etc);
-				alert('token > '+event.token); // token user login
-				alert('message > '+event.message);  
+				$('#bda').append(event.status); // 1 - success, 0 - error
+				$('#bda').append('data > '+JSON.stringify(event.data)); //Object response (id, name, email, etc);
+				$('#bda').append('token > '+event.token); // token user login
+				$('#bda').append('message > '+event.message);  
 			}
 			
 			//Callback Logout
@@ -46,6 +46,6 @@
 			}   
 		}
 	</script> 
-   
+   <h1 id="bda"></h1>
   </body>
 </html>
